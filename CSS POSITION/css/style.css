@@ -8,7 +8,7 @@
 
 body{
     font-family: "Roboto", sans-serif;
-    font-size: 0.5rem;
+    font-size: 1.5rem;
     min-height: 200vh;
 }
 
@@ -17,6 +17,7 @@ body{
     width: 75vw;
     height: 85vh;
     margin: 40px auto;
+    position: relative;
 }
 
 .inner-container{
@@ -36,4 +37,70 @@ body{
 .absolute{
     background-color: #00f;
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.relative{
+    background-color: red;
+    position: relative;
+    top: 300px;
+    left: 100px;
+}
+
+.fixed{
+    background-color: green;
+    position: fixed;
+    top: 100px;
+}
+
+.sticky{
+    background-color: #000;
+    position: sticky;
+    top: 0;
+}
+
+html{scroll-behavior: smooth;}
+
+section{
+    height: 100vh;
+}
+
+.blue{background-color: #00f;}
+.red{background-color: #f00;}
+.green {background-color: green;}
+
+header, footer{
+    color: #fff;
+    text-align: center;
+    height: 100px;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    font-size: 5rem;
+}
+
+footer{
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    font-size: 3rem;
+}
+
+a:visited{
+    color: #fff;
+}
+
+.social{
+    background-color: royalblue;
+    color: #fff;
+    font-size: inherit;
+    padding: 1rem;
+    position: fixed;
+    top: 30%;
+    left: 0;
+    z-index: 1;
 }
