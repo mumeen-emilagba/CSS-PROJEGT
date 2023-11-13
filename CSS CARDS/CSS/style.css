@@ -40,6 +40,7 @@ footer{
 
 header{
     top: 0;
+    color: red;
 }
 
 nav{
@@ -52,12 +53,19 @@ nav{
     justify-content: space-evenly;
 }
 
-nav a, nav a:visited{
+nav a:link
+nav a:visited{
     color: #000;
 }
 
-nav a:hover, nav a:focus{
+nav :a:hover 
+nav a:focus{
     color: hsla(0,0%,20%, 0.6);
+}
+
+
+nav a:active{
+    color: red;
 }
 
 main{
@@ -84,6 +92,10 @@ footer{
     align-items: center;
 }
 
+.card:target{
+    border: 2px solid rebeccapurple;
+}
+
 .card figure{
     display: flex;
     flex-flow: column nowrap;
@@ -94,11 +106,48 @@ footer{
     border-radius: 50%;
 }
 
+.card img:not([alt]){
+    border: 10px solid red;
+}
+
+.card:nth-child(even){
+    background-color: papayawhip;
+}
+
 .card figcaption{
     font-weight: bolder;
     font-size: 2rem;
     margin: 1rem;
     text-align: center;
+}
+
+.card figcaption::before{
+     content:; 
+     display: block;
+}
+
+.card p{
+    position: relative;
+}
+
+.card p::before{
+    content: open-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    left: -0.5em;
+}
+
+.card figcaption::first-line{
+    font-size: 3rem;
+}
+
+.card p::after{
+    content: close-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.5em;
+    right: -0.1em;
 }
 
 /* || SMALL */
@@ -127,19 +176,52 @@ footer{
     .card figure{
         flex-flow: column-reverse;
     }
-    .card figcaption{
-        margin: 0.1rem 0;
-    }
     .card p{
         margin-top: 1rem;
     }
 }
 
 /* || LARGE */
-@media screen and (min-width:576px)
-{
-    
+@media screen and (min-width:992){
+.card{
+    width: min(100%, 400px);
+}
+.card:nth-child(2){
+    order: -1;
+}
 }
 
-    
+/* || XL */
+@media screen and (min-width:1200PX){
+.card{
+    width: min(calc(33% - 1rem), 500px);
+}
+}
+
+
+/* || MOBILE DEVICE LANDSCAPE */
+@media screen and (min-height: 425px)
+and (min-aspect-ratio: 7/4){
+    h1{ font-size: 1.5rem;}
+
+    nav{
+        display: none;
+    }
+
+    main{
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+
+    .card{
+        width: min(calc(33%- 00.5rem)
+        200px);
+    }
+
+    .card figcaption, .card p{
+        font-size: 1.25rem;
+    }
+
+}
 
